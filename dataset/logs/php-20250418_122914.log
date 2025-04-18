@@ -1,0 +1,69 @@
+INFO: [Clone] https://github.com/laravel/laravel.git -> ./repo/php/laravel-laravel, decription: The PHP Framework For Web Artisans
+INFO: [HASH]: CompletedProcess(args=['git', 'rev-parse', 'HEAD'], returncode=0, stdout='f6e4638ee6ca1cd40aa7c56311d89ea3d91a24f8\n', stderr=''), remove laravel-laravel  .git/ 
+INFO: [Clone] https://github.com/symfony/symfony.git -> ./repo/php/symfony-symfony, decription: The Symfony PHP framework
+INFO: [HASH]: CompletedProcess(args=['git', 'rev-parse', 'HEAD'], returncode=0, stdout='904df780584e6e7300e7777d28a80201fb7f819d\n', stderr=''), remove symfony-symfony  .git/ 
+INFO: [Clone] https://github.com/composer/composer.git -> ./repo/php/composer-composer, decription: Dependency Manager for PHP
+INFO: [HASH]: CompletedProcess(args=['git', 'rev-parse', 'HEAD'], returncode=0, stdout='29e47ed68cea82a0006c1c8949d85c7b15b11a0e\n', stderr=''), remove composer-composer  .git/ 
+INFO: [Clone] https://github.com/bcit-ci/CodeIgniter.git -> ./repo/php/bcit-ci-CodeIgniter, decription: CodeIgniter PHP framework
+INFO: [HASH]: CompletedProcess(args=['git', 'rev-parse', 'HEAD'], returncode=0, stdout='3658d731eaabe6117298a105ffb5b9dd59e190ce\n', stderr=''), remove bcit-ci-CodeIgniter  .git/ 
+INFO: [Clone] https://github.com/cakephp/cakephp.git -> ./repo/php/cakephp-cakephp, decription: CakePHP framework
+INFO: [HASH]: CompletedProcess(args=['git', 'rev-parse', 'HEAD'], returncode=0, stdout='64789870f0b2b7b92de9ca85871c2da7193345b6\n', stderr=''), remove cakephp-cakephp  .git/ 
+INFO: [Clone] https://github.com/slimphp/Slim.git -> ./repo/php/slimphp-Slim, decription: Slim Framework for PHP
+INFO: [HASH]: CompletedProcess(args=['git', 'rev-parse', 'HEAD'], returncode=0, stdout='ad56812962b1d75daa73ecd68d71741cb5aa2c6f\n', stderr=''), remove slimphp-Slim  .git/ 
+INFO: [Clone] https://github.com/yiisoft/yii2.git -> ./repo/php/yiisoft-yii2, decription: Yii PHP Framework
+INFO: [HASH]: CompletedProcess(args=['git', 'rev-parse', 'HEAD'], returncode=0, stdout='5fb3f809c59f742537df77e0da1ad36a1175834a\n', stderr=''), remove yiisoft-yii2  .git/ 
+INFO: [Clone] https://github.com/phpmyadmin/phpmyadmin.git -> ./repo/php/phpmyadmin-phpmyadmin, decription: A web interface for MySQL and MariaDB
+INFO: [HASH]: CompletedProcess(args=['git', 'rev-parse', 'HEAD'], returncode=0, stdout='c3a6d422f1415c593884bd763b40603c332b33c7\n', stderr=''), remove phpmyadmin-phpmyadmin  .git/ 
+INFO: [Clone] https://github.com/monicahq/monica.git -> ./repo/php/monicahq-monica, decription: Personal Relationship Manager
+INFO: [HASH]: CompletedProcess(args=['git', 'rev-parse', 'HEAD'], returncode=0, stdout='399588cc8a8aea3f5872b9071256e3e243d20e57\n', stderr=''), remove monicahq-monica  .git/ 
+INFO: [Clone] https://github.com/matomo-org/matomo.git -> ./repo/php/matomo-org-matomo, decription: Web analytics platform
+INFO: [HASH]: CompletedProcess(args=['git', 'rev-parse', 'HEAD'], returncode=0, stdout='ec963abe21a99400d11dc9253ae8a027d5753c1b\n', stderr=''), remove matomo-org-matomo  .git/ 
+INFO: [Clone] https://github.com/nextcloud/server.git -> ./repo/php/nextcloud-server, decription: Nextcloud server
+INFO: [HASH]: CompletedProcess(args=['git', 'rev-parse', 'HEAD'], returncode=0, stdout='c3370204463f2be4c053c384d220ded79917481b\n', stderr=''), remove nextcloud-server  .git/ 
+INFO: [Clone] https://github.com/owncloud/core.git -> ./repo/php/owncloud-core, decription: OwnCloud server
+INFO: [HASH]: CompletedProcess(args=['git', 'rev-parse', 'HEAD'], returncode=0, stdout='a130ffcc4657a40bc5270ad888e2b5f11b2dcb8d\n', stderr=''), remove owncloud-core  .git/ 
+INFO: [Clone] https://github.com/fzaninotto/Faker.git -> ./repo/php/fzaninotto-Faker, decription: PHP library for generating fake data
+INFO: [HASH]: CompletedProcess(args=['git', 'rev-parse', 'HEAD'], returncode=0, stdout='5ffe7db6c80f441f150fc88008d64e64af66634b\n', stderr=''), remove fzaninotto-Faker  .git/ 
+INFO: [Clone] https://github.com/guzzle/guzzle.git -> ./repo/php/guzzle-guzzle, decription: PHP HTTP client
+INFO: [HASH]: CompletedProcess(args=['git', 'rev-parse', 'HEAD'], returncode=0, stdout='7b2f29fe81dc4da0ca0ea7d42107a0845946ea77\n', stderr=''), remove guzzle-guzzle  .git/ 
+INFO: [Clone] https://github.com/PHPMailer/PHPMailer.git -> ./repo/php/PHPMailer-PHPMailer, decription: Popular mailer library for PHP
+INFO: [HASH]: CompletedProcess(args=['git', 'rev-parse', 'HEAD'], returncode=0, stdout='e7b1334cf21c4d0d36abcb34223efc4a4f65f86f\n', stderr=''), remove PHPMailer-PHPMailer  .git/ 
+INFO: [Clone] https://github.com/sebastianbergmann/phpunit.git -> ./repo/php/sebastianbergmann-phpunit, decription: PHP testing framework
+INFO: [HASH]: CompletedProcess(args=['git', 'rev-parse', 'HEAD'], returncode=0, stdout='f681fb1086ba6f97afb3d51880feddda4e993b27\n', stderr=''), remove sebastianbergmann-phpunit  .git/ 
+INFO: [Clone] https://github.com/beyondcode/laravel-websockets.git -> ./repo/php/beyondcode-laravel-websockets, decription: WebSocket server for Laravel
+INFO: [HASH]: CompletedProcess(args=['git', 'rev-parse', 'HEAD'], returncode=0, stdout='2e4b2f35f9ef701809daff2a752713bbc68364c8\n', stderr=''), remove beyondcode-laravel-websockets  .git/ 
+INFO: [Clone] https://github.com/barryvdh/laravel-dompdf.git -> ./repo/php/barryvdh-laravel-dompdf, decription: DOMPDF wrapper for Laravel
+INFO: [HASH]: CompletedProcess(args=['git', 'rev-parse', 'HEAD'], returncode=0, stdout='8e71b99fc53bb8eb77f316c3c452dd74ab7cb25d\n', stderr=''), remove barryvdh-laravel-dompdf  .git/ 
+INFO: [Clone] https://github.com/spatie/laravel-permission.git -> ./repo/php/spatie-laravel-permission, decription: Role and permission management for Laravel
+INFO: [HASH]: CompletedProcess(args=['git', 'rev-parse', 'HEAD'], returncode=0, stdout='cc264a1d959e70742301156a1b06bbbcd262357e\n', stderr=''), remove spatie-laravel-permission  .git/ 
+INFO: [Clone] https://github.com/doctrine/orm.git -> ./repo/php/doctrine-orm, decription: Doctrine Object Relational Mapper
+INFO: [HASH]: CompletedProcess(args=['git', 'rev-parse', 'HEAD'], returncode=0, stdout='3e18a58de6dc48b2504bd0671596efd7dd5234b2\n', stderr=''), remove doctrine-orm  .git/ 
+INFO: [Clone] https://github.com/WordPress/WordPress.git -> ./repo/php/WordPress-WordPress, decription: The world's most popular CMS
+INFO: [HASH]: CompletedProcess(args=['git', 'rev-parse', 'HEAD'], returncode=0, stdout='f581a7f5b370bad6f5d8ba21f8d62edf591bfd49\n', stderr=''), remove WordPress-WordPress  .git/ 
+INFO: [Clone] https://github.com/smarty-php/smarty.git -> ./repo/php/smarty-php-smarty, decription: Template engine for PHP
+INFO: [HASH]: CompletedProcess(args=['git', 'rev-parse', 'HEAD'], returncode=0, stdout='afbd71b868c7f5a1b2e55b1074b6758cac2f362f\n', stderr=''), remove smarty-php-smarty  .git/ 
+INFO: [SKIP] phpmyadmin-phpmyadmin already exists
+INFO: successfully cloned 22 repos, skipped 1 repos
+INFO: successfully cloned repos:
+INFO: laravel-laravel [hash]: f6e4638ee6ca1cd40aa7c56311d89ea3d91a24f8, [decription]: The PHP Framework For Web Artisans 
+INFO: symfony-symfony [hash]: 904df780584e6e7300e7777d28a80201fb7f819d, [decription]: The Symfony PHP framework 
+INFO: composer-composer [hash]: 29e47ed68cea82a0006c1c8949d85c7b15b11a0e, [decription]: Dependency Manager for PHP 
+INFO: bcit-ci-CodeIgniter [hash]: 3658d731eaabe6117298a105ffb5b9dd59e190ce, [decription]: CodeIgniter PHP framework 
+INFO: cakephp-cakephp [hash]: 64789870f0b2b7b92de9ca85871c2da7193345b6, [decription]: CakePHP framework 
+INFO: slimphp-Slim [hash]: ad56812962b1d75daa73ecd68d71741cb5aa2c6f, [decription]: Slim Framework for PHP 
+INFO: yiisoft-yii2 [hash]: 5fb3f809c59f742537df77e0da1ad36a1175834a, [decription]: Yii PHP Framework 
+INFO: phpmyadmin-phpmyadmin [hash]: c3a6d422f1415c593884bd763b40603c332b33c7, [decription]: A web interface for MySQL and MariaDB 
+INFO: monicahq-monica [hash]: 399588cc8a8aea3f5872b9071256e3e243d20e57, [decription]: Personal Relationship Manager 
+INFO: matomo-org-matomo [hash]: ec963abe21a99400d11dc9253ae8a027d5753c1b, [decription]: Web analytics platform 
+INFO: nextcloud-server [hash]: c3370204463f2be4c053c384d220ded79917481b, [decription]: Nextcloud server 
+INFO: owncloud-core [hash]: a130ffcc4657a40bc5270ad888e2b5f11b2dcb8d, [decription]: OwnCloud server 
+INFO: fzaninotto-Faker [hash]: 5ffe7db6c80f441f150fc88008d64e64af66634b, [decription]: PHP library for generating fake data 
+INFO: guzzle-guzzle [hash]: 7b2f29fe81dc4da0ca0ea7d42107a0845946ea77, [decription]: PHP HTTP client 
+INFO: PHPMailer-PHPMailer [hash]: e7b1334cf21c4d0d36abcb34223efc4a4f65f86f, [decription]: Popular mailer library for PHP 
+INFO: sebastianbergmann-phpunit [hash]: f681fb1086ba6f97afb3d51880feddda4e993b27, [decription]: PHP testing framework 
+INFO: beyondcode-laravel-websockets [hash]: 2e4b2f35f9ef701809daff2a752713bbc68364c8, [decription]: WebSocket server for Laravel 
+INFO: barryvdh-laravel-dompdf [hash]: 8e71b99fc53bb8eb77f316c3c452dd74ab7cb25d, [decription]: DOMPDF wrapper for Laravel 
+INFO: spatie-laravel-permission [hash]: cc264a1d959e70742301156a1b06bbbcd262357e, [decription]: Role and permission management for Laravel 
+INFO: doctrine-orm [hash]: 3e18a58de6dc48b2504bd0671596efd7dd5234b2, [decription]: Doctrine Object Relational Mapper 
+INFO: WordPress-WordPress [hash]: f581a7f5b370bad6f5d8ba21f8d62edf591bfd49, [decription]: The world's most popular CMS 
+INFO: smarty-php-smarty [hash]: afbd71b868c7f5a1b2e55b1074b6758cac2f362f, [decription]: Template engine for PHP 

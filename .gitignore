@@ -1,0 +1,30 @@
+# Python-generated files
+__pycache__/
+*.py[oc]
+build/
+dist/
+wheels/
+*.egg-info
+
+# Virtual environments
+.venv
+
+# train result
+**/results/
+**/php_codebert_model/
+
+php.zip
+**/test/
+
+**.csv
+
+# 排除 dataset 目录下的所有内容
+dataset/*
+
+# 不排除 .py 文件
+!dataset/**/*.py
+
+# 不排除 logs 文件/目录
+!dataset/**/logs
+
+.vscode/

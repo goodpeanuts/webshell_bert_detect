@@ -1,0 +1,66 @@
+INFO: [Clone] https://github.com/tennc/webshell.git -> ./repo/webshell/tennc-webshell, decription: 
+INFO: [HASH]: CompletedProcess(args=['git', 'rev-parse', 'HEAD'], returncode=0, stdout='6b17eae4a0bc792f996a38ce32772e4db9c7c799\n', stderr=''), remove tennc-webshell  .git/ 
+INFO: [Clone] https://github.com/xl7dev/WebShell.git -> ./repo/webshell/xl7dev-WebShell, decription: 
+INFO: [HASH]: CompletedProcess(args=['git', 'rev-parse', 'HEAD'], returncode=0, stdout='f7cd87feb5ef0375fc7a7cbcfea15713a3fb5c5b\n', stderr=''), remove xl7dev-WebShell  .git/ 
+INFO: [Clone] https://github.com/JohnTroony/php-webshells.git -> ./repo/webshell/JohnTroony-php-webshells, decription: 
+INFO: [HASH]: CompletedProcess(args=['git', 'rev-parse', 'HEAD'], returncode=0, stdout='226a15d0684e2f893caed0b94fbbf0037b89adea\n', stderr=''), remove JohnTroony-php-webshells  .git/ 
+INFO: [Clone] https://github.com/BlackArch/webshells.git -> ./repo/webshell/BlackArch-webshells, decription: 
+INFO: [HASH]: CompletedProcess(args=['git', 'rev-parse', 'HEAD'], returncode=0, stdout='e8e1a379c38240ec0db89f01be6175012d72a0e8\n', stderr=''), remove BlackArch-webshells  .git/ 
+INFO: [Clone] https://github.com/LandGrey/webshell-detect-bypass.git -> ./repo/webshell/LandGrey-webshell-detect-bypass, decription: 
+INFO: [HASH]: CompletedProcess(args=['git', 'rev-parse', 'HEAD'], returncode=0, stdout='a7057c5c54e03c9f2a1afe0b5546ef14b8e81bc6\n', stderr=''), remove LandGrey-webshell-detect-bypass  .git/ 
+INFO: [Clone] https://github.com/JoyChou93/webshell.git -> ./repo/webshell/JoyChou93-webshell, decription: 
+INFO: [HASH]: CompletedProcess(args=['git', 'rev-parse', 'HEAD'], returncode=0, stdout='2185acc2b494f7c0dd8487273d514fb89ebe9240\n', stderr=''), remove JoyChou93-webshell  .git/ 
+INFO: [Clone] https://github.com/bartblaze/PHP-backdoors.git -> ./repo/webshell/bartblaze-PHP-backdoors, decription: 
+INFO: [HASH]: CompletedProcess(args=['git', 'rev-parse', 'HEAD'], returncode=0, stdout='8ca75ed86a5594fb2efb4629cc417f220cda9c82\n', stderr=''), remove bartblaze-PHP-backdoors  .git/ 
+INFO: [Clone] https://github.com/WangYihang/Webshell-Sniper.git -> ./repo/webshell/WangYihang-Webshell-Sniper, decription: 
+INFO: [HASH]: CompletedProcess(args=['git', 'rev-parse', 'HEAD'], returncode=0, stdout='1bd230414aa48b056a944d6447ef2e04f2d6e896\n', stderr=''), remove WangYihang-Webshell-Sniper  .git/ 
+INFO: [Clone] https://github.com/threedr3am/JSP-Webshells.git -> ./repo/webshell/threedr3am-JSP-Webshells, decription: 
+INFO: [HASH]: CompletedProcess(args=['git', 'rev-parse', 'HEAD'], returncode=0, stdout='56c18d9e10bc97221acea7bd70cd228b9afb7e2c\n', stderr=''), remove threedr3am-JSP-Webshells  .git/ 
+INFO: [Clone] https://github.com/DeEpinGh0st/PHP-bypass-collection.git -> ./repo/webshell/DeEpinGh0st-PHP-bypass-collection, decription: 
+INFO: [HASH]: CompletedProcess(args=['git', 'rev-parse', 'HEAD'], returncode=0, stdout='8d1e82f0084b9cfbb31ba16bd3d4de64642d1700\n', stderr=''), remove DeEpinGh0st-PHP-bypass-collection  .git/ 
+INFO: [Clone] https://github.com/lcatro/PHP-WebShell-Bypass-WAF.git -> ./repo/webshell/lcatro-PHP-WebShell-Bypass-WAF, decription: 
+INFO: [HASH]: CompletedProcess(args=['git', 'rev-parse', 'HEAD'], returncode=0, stdout='672f2ceb7d73a445a7bdd3883863495f87c07902\n', stderr=''), remove lcatro-PHP-WebShell-Bypass-WAF  .git/ 
+INFO: [Clone] https://github.com/tanjiti/webshellSample.git -> ./repo/webshell/tanjiti-webshellSample, decription: 
+INFO: [HASH]: CompletedProcess(args=['git', 'rev-parse', 'HEAD'], returncode=0, stdout='01142b76a05afe43a85284feb15be8ec893dc1da\n', stderr=''), remove tanjiti-webshellSample  .git/ 
+INFO: [Clone] https://github.com/webshellpub/awsome-webshell.git -> ./repo/webshell/webshellpub-awsome-webshell, decription: 
+INFO: [HASH]: CompletedProcess(args=['git', 'rev-parse', 'HEAD'], returncode=0, stdout='3e29e894a728077c44136cffbeca4c158acbc23d\n', stderr=''), remove webshellpub-awsome-webshell  .git/ 
+INFO: [Clone] https://github.com/tdifg/WebShell.git -> ./repo/webshell/tdifg-WebShell, decription: 
+INFO: [HASH]: CompletedProcess(args=['git', 'rev-parse', 'HEAD'], returncode=0, stdout='bb669471d21bbf874f0a4bcfc872f823323ec694\n', stderr=''), remove tdifg-WebShell  .git/ 
+INFO: [Clone] https://github.com/malwares/WebShell.git -> ./repo/webshell/malwares-WebShell, decription: 
+INFO: [HASH]: CompletedProcess(args=['git', 'rev-parse', 'HEAD'], returncode=0, stdout='2c064553f7fd29fc2e5359270bd201ffa5d51f39\n', stderr=''), remove malwares-WebShell  .git/ 
+INFO: [Clone] https://github.com/lhlsec/webshell.git -> ./repo/webshell/lhlsec-webshell, decription: 
+INFO: [HASH]: CompletedProcess(args=['git', 'rev-parse', 'HEAD'], returncode=0, stdout='4669c5f8e36ef9cf48710fe5c9c622ec825bb017\n', stderr=''), remove lhlsec-webshell  .git/ 
+INFO: [Clone] https://github.com/oneoneplus/webshell.git -> ./repo/webshell/oneoneplus-webshell, decription: 
+INFO: [HASH]: CompletedProcess(args=['git', 'rev-parse', 'HEAD'], returncode=0, stdout='6f030b91c18d9743507cac5cabe7fede665bfd9e\n', stderr=''), remove oneoneplus-webshell  .git/ 
+INFO: [Clone] https://github.com/vnhacker1337/Webshell.git -> ./repo/webshell/vnhacker1337-Webshell, decription: 
+INFO: [HASH]: CompletedProcess(args=['git', 'rev-parse', 'HEAD'], returncode=0, stdout='ac08d6ddbcdca258da6fb3ee15aca3a19136786d\n', stderr=''), remove vnhacker1337-Webshell  .git/ 
+INFO: [Clone] https://github.com/backlion/webshell.git -> ./repo/webshell/backlion-webshell, decription: 
+ERROR: failed to clone https://github.com/backlion/webshell.git: (Command '['git', 'clone', 'https://github.com/backlion/webshell.git', './repo/webshell/backlion-webshell']' returned non-zero exit status 128.)
+INFO: [Clone] https://github.com/twepl/wso.git -> ./repo/webshell/twepl-wso, decription: wso for php8
+ERROR: failed to clone https://github.com/twepl/wso.git: (Command '['git', 'clone', 'https://github.com/twepl/wso.git', './repo/webshell/twepl-wso']' returned non-zero exit status 128.)
+INFO: [Clone] https://github.com/flozz/p0wny-shell.git -> ./repo/webshell/flozz-p0wny-shell, decription: p0wny-shell
+INFO: [HASH]: CompletedProcess(args=['git', 'rev-parse', 'HEAD'], returncode=0, stdout='788b3d2b3d369a42e82b04686ed4054da74d37bf\n', stderr=''), remove flozz-p0wny-shell  .git/ 
+INFO: successfully cloned 19 repos, skipped 0 repos
+INFO: successfully cloned repos:
+INFO: tennc-webshell [hash]: 6b17eae4a0bc792f996a38ce32772e4db9c7c799, [decription]:  
+INFO: xl7dev-WebShell [hash]: f7cd87feb5ef0375fc7a7cbcfea15713a3fb5c5b, [decription]:  
+INFO: JohnTroony-php-webshells [hash]: 226a15d0684e2f893caed0b94fbbf0037b89adea, [decription]:  
+INFO: BlackArch-webshells [hash]: e8e1a379c38240ec0db89f01be6175012d72a0e8, [decription]:  
+INFO: LandGrey-webshell-detect-bypass [hash]: a7057c5c54e03c9f2a1afe0b5546ef14b8e81bc6, [decription]:  
+INFO: JoyChou93-webshell [hash]: 2185acc2b494f7c0dd8487273d514fb89ebe9240, [decription]:  
+INFO: bartblaze-PHP-backdoors [hash]: 8ca75ed86a5594fb2efb4629cc417f220cda9c82, [decription]:  
+INFO: WangYihang-Webshell-Sniper [hash]: 1bd230414aa48b056a944d6447ef2e04f2d6e896, [decription]:  
+INFO: threedr3am-JSP-Webshells [hash]: 56c18d9e10bc97221acea7bd70cd228b9afb7e2c, [decription]:  
+INFO: DeEpinGh0st-PHP-bypass-collection [hash]: 8d1e82f0084b9cfbb31ba16bd3d4de64642d1700, [decription]:  
+INFO: lcatro-PHP-WebShell-Bypass-WAF [hash]: 672f2ceb7d73a445a7bdd3883863495f87c07902, [decription]:  
+INFO: tanjiti-webshellSample [hash]: 01142b76a05afe43a85284feb15be8ec893dc1da, [decription]:  
+INFO: webshellpub-awsome-webshell [hash]: 3e29e894a728077c44136cffbeca4c158acbc23d, [decription]:  
+INFO: tdifg-WebShell [hash]: bb669471d21bbf874f0a4bcfc872f823323ec694, [decription]:  
+INFO: malwares-WebShell [hash]: 2c064553f7fd29fc2e5359270bd201ffa5d51f39, [decription]:  
+INFO: lhlsec-webshell [hash]: 4669c5f8e36ef9cf48710fe5c9c622ec825bb017, [decription]:  
+INFO: oneoneplus-webshell [hash]: 6f030b91c18d9743507cac5cabe7fede665bfd9e, [decription]:  
+INFO: vnhacker1337-Webshell [hash]: ac08d6ddbcdca258da6fb3ee15aca3a19136786d, [decription]:  
+INFO: flozz-p0wny-shell [hash]: 788b3d2b3d369a42e82b04686ed4054da74d37bf, [decription]: p0wny-shell 
+ERROR: 2 repos failed to clone
+ERROR: [failed] backlion-webshell, [decription]: 
+ERROR: [failed] twepl-wso, [decription]: wso for php8
