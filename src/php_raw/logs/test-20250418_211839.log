@@ -1,0 +1,31 @@
+INFO: test file extension include: ['php']
+INFO: ↗️ Collect White files: 33441
+INFO: ↗️ Collect Black files: 2488
+INFO: Testing normal files (0):
+ERROR: expect Normal: ../../dataset/repo/php/WordPress-WordPress/wp-admin/includes/class-pclzip.php (Predicted: 1, Confidence: 0.5531)
+ERROR: expect Normal: ../../dataset/repo/php/symfony-symfony/src/Symfony/Component/Process/Tests/Fixtures/memory.php (Predicted: 1, Confidence: 1.0000)
+INFO: Testing malicious files (1):
+ERROR: expect Malicious: ../../dataset/repo/webshell/tennc-webshell/php/twitter/mailer.php (Predicted: 0, Confidence: 0.9992)
+ERROR: expect Malicious: ../../dataset/repo/webshell/xl7dev-WebShell/Php/c999shell.php (Predicted: 0, Confidence: 0.9965)
+ERROR: expect Malicious: ../../dataset/repo/webshell/xl7dev-WebShell/Php/get.php (Predicted: 0, Confidence: 0.8155)
+ERROR: expect Malicious: ../../dataset/repo/webshell/xl7dev-WebShell/脱裤脚本/mysql/index.php (Predicted: 0, Confidence: 0.9827)
+ERROR: expect Malicious: ../../dataset/repo/webshell/webshellpub-awsome-webshell/php/global.func.php (Predicted: 0, Confidence: 1.0000)
+ERROR: expect Malicious: ../../dataset/repo/webshell/oneoneplus-webshell/php/global.func.php (Predicted: 0, Confidence: 1.0000)
+ERROR: expect Malicious: ../../dataset/repo/webshell/tdifg-WebShell/Php/c999shell.php (Predicted: 0, Confidence: 0.9965)
+INFO: ✅ Accuracy: 0.9997 | Total: 35929 | Correct: 35920
+INFO: Include type: ['php'] | Webshell: 2488 | Normal: 33441
+INFO: Webshell: 2488 | correct: 2481 | error: 7 | Accuracy 0.9972
+INFO: Normal: 33441 | correct: 33439 | error: 2 | Accuracy 0.9999
+ERROR: Error file: ../../dataset/repo/php/WordPress-WordPress/wp-admin/includes/class-pclzip.php
+ERROR: Error file: ../../dataset/repo/php/symfony-symfony/src/Symfony/Component/Process/Tests/Fixtures/memory.php
+ERROR: Error file: ../../dataset/repo/webshell/tennc-webshell/php/twitter/mailer.php
+ERROR: Error file: ../../dataset/repo/webshell/xl7dev-WebShell/Php/c999shell.php
+ERROR: Error file: ../../dataset/repo/webshell/xl7dev-WebShell/Php/get.php
+ERROR: Error file: ../../dataset/repo/webshell/xl7dev-WebShell/脱裤脚本/mysql/index.php
+ERROR: Error file: ../../dataset/repo/webshell/webshellpub-awsome-webshell/php/global.func.php
+ERROR: Error file: ../../dataset/repo/webshell/oneoneplus-webshell/php/global.func.php
+ERROR: Error file: ../../dataset/repo/webshell/tdifg-WebShell/Php/c999shell.php
+INFO: Accuracy: 0.9997
+INFO: Precision: 0.9992
+INFO: Recall: 0.9972
+INFO: F1 Score: 0.9982

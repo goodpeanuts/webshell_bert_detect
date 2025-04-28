@@ -129,7 +129,7 @@ def test():
     logging.info(f"Include type: {collect.ext} | Webshell: {black_cnt} | Normal: {white_cnt}")
 
     logging.info(f"Webshell: {black_cnt} | correct: {black_correct} | error: {black_cnt - black_correct} | Accuracy {black_correct / black_cnt:.4f}")
-    logging.info(f"Normal: {white_cnt} | Normal correct: {white_correct} | error: {white_cnt - white_correct} | Accuracy {white_correct / white_cnt:.4f}")
+    logging.info(f"Normal: {white_cnt} | correct: {white_correct} | error: {white_cnt - white_correct} | Accuracy {white_correct / white_cnt:.4f}")
     for file_path in err:
         logging.error(f"Error file: {file_path}")
     
