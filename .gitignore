@@ -27,6 +27,6 @@ dataset/*
 # 不排除 logs 文件/目录
 !dataset/**/logs
 # 不排除 manual 文件/目录
-# !dataset/manual/
+!dataset/manual/
 
 .vscode/
