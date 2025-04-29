@@ -26,6 +26,8 @@ def filter_and_clean_files(src_dir: str, dest_dir: str, allowed_extensions: list
         # 重新创建空目录
     
     os.makedirs(dest_dir, exist_ok=True)
+    
+    results = []
 
     # 遍历源目录下的所有文件夹
     for item in os.listdir(src_dir):
@@ -42,6 +44,8 @@ def filter_and_clean_files(src_dir: str, dest_dir: str, allowed_extensions: list
             file_path = os.path.join(root, file)
             if not any(file.endswith(ext) for ext in allowed_extensions):
                 os.remove(file_path)
+            else:
+                results.append(file_path)
 
     # 清理空文件夹
     for root, dirs, _ in os.walk(dest_dir, topdown=False):
@@ -49,5 +53,8 @@ def filter_and_clean_files(src_dir: str, dest_dir: str, allowed_extensions: list
             dir_path = os.path.join(root, dir)
             if not os.listdir(dir_path):  # 如果文件夹为空
                 os.rmdir(dir_path)
+    
+    return results
 
-filter_and_clean_files(src_directory, dest_directory, allowed_file_extensions)
+if __name__ == "__main__":
+    filter_and_clean_files(src_directory, dest_directory, allowed_file_extensions)
