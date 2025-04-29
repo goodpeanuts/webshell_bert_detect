@@ -8,6 +8,7 @@ dependencies = [
     "accelerate>=1.6.0",
     "datasets>=3.5.0",
     "fvcore>=0.1.5.post20221221",
+    "gradio>=5.27.1",
     "pandas>=2.2.3",
     "scikit-learn>=1.6.1",
     "tensorboardx>=2.6.2.2",

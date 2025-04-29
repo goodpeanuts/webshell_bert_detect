@@ -1,6 +1,10 @@
 import os
 import shutil
 
+"""
+主要功能是从源目录 (src_dir) 中复制文件到目标目录 (dest_dir)，只保留指定后缀的文件，并清理掉不符合条件的文件和空文件夹。
+"""
+
 src_directory = "./repo"
 dest_directory = "./filter"
 allowed_file_extensions = [".txt", ".md"]
