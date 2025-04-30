@@ -1,9 +1,16 @@
+from gettext import find
+import pprint
 import subprocess
 import os
 import filter
+import re
+import csv
+from typing import List
+import glob
 from datetime import datetime
 import logging
 from tqdm import tqdm
+import pro_opcode
 
 current_time = datetime.now().strftime("%Y%m%d_%H%M%S")
 os.makedirs("./logs", exist_ok=True)
@@ -56,55 +63,65 @@ def extract_opcodes(container_id: str, file_path: str):
         stdout = result.stdout
         stderr = result.stderr
 
-        # if 'compiled vars' in stdout:
-            # lines = stdout.splitlines()
-            # start = next(i for i, line in enumerate(lines) if 'compiled vars' in line)
-            # return '\n'.join(lines[start:])
         return (stdout, stderr)
-        # else:
-        #     logging.error(f"[-] No compiled vars found in {file_path} stdout")
-        #     return (None, None)
 
     except Exception as e:
         print(f"[!] Error extracting opcode: {e}")
         return (None, None)
 
+def find_stderr_txt_files(directory):
+    # 使用递归模式匹配 .stderr.txt 文件
+    files = glob.glob(f"{directory}/**/*.stderr.txt", recursive=True)
+    # 确保路径完整性
+    return [os.path.normpath(file) for file in files]
+
+def print_files():
+    directory = "./filter/php"
+    files = find_stderr_txt_files(directory)
+    for file in files:
+        assert os.path.exists(file), f"File not found: {file}"
+        print(file)
 
 # 示例用法
 if __name__ == "__main__":
-    container_id = start_docker_container()
-    if not container_id:
-        logging.error("[-] Failed to start Docker container.")
-        exit(1)
+    # print_files()
+    files = find_stderr_txt_files("./filter/php")
+    for f in files :
+        pro_opcode.extract_from_file(f, output_dir="./csv_output")
 
-    # src_directory = "./repo"
-    # dest_directory = "./filter"
-    src_directory = "./manual"
-    dest_directory = "./filter/manual"
-    allowed_file_extensions = [".php"]
+    # container_id = start_docker_container()
+    # if not container_id:
+    #     logging.error("[-] Failed to start Docker container.")
+    #     exit(1)
 
-    phps = filter.filter_and_clean_files(src_directory, dest_directory, allowed_file_extensions)
+    # # src_directory = "./repo"
+    # # dest_directory = "./filter"
+    # src_directory = "./manual"
+    # dest_directory = "./filter/manual"
+    # allowed_file_extensions = [".php"]
 
-    try:
-        # 多次提取操作码
-        for php_file in tqdm(phps, desc="Extracting opcodes"):
-            (stdout, stderr) = extract_opcodes(container_id, php_file)
-            if stdout:
-                out_file = os.path.splitext(php_file)[0] + "_opcode.stdout.txt"
-                with open(out_file, "w") as f:
-                    f.write(stdout)
-                logging.info(f"[+] Opcode written to {out_file}")
+    # phps = filter.filter_and_clean_files(src_directory, dest_directory, allowed_file_extensions)
+
+    # try:
+    #     # 多次提取操作码
+    #     for php_file in tqdm(phps, desc="Extracting opcodes"):
+    #         (stdout, stderr) = extract_opcodes(container_id, php_file)
+    #         if stdout:
+    #             out_file = os.path.splitext(php_file)[0] + "_opcode.stdout.txt"
+    #             with open(out_file, "w") as f:
+    #                 f.write(stdout)
+    #             logging.info(f"[+] Opcode written to {out_file}")
                 
-            else:
-                logging.error(f"[-] Failed to extract opcode stdout for {php_file}.")
+    #         else:
+    #             logging.error(f"[-] Failed to extract opcode stdout for {php_file}.")
 
-            if stderr:
-                err_file = os.path.splitext(php_file)[0] + "_opcode.stderr.txt"
-                with open(err_file, "w") as f:
-                    f.write(stderr)
-                logging.info(f"[+] Opcode error written to {err_file}")
-            else:
-                logging.error(f"[-] Failed to extract opcode stderr for {php_file}.")
-    finally:
-        # 确保程序结束时停止 Docker 容器
-        stop_docker_container(container_id)
+    #         if stderr:
+    #             err_file = os.path.splitext(php_file)[0] + "_opcode.stderr.txt"
+    #             with open(err_file, "w") as f:
+    #                 f.write(stderr)
+    #             logging.info(f"[+] Opcode error written to {err_file}")
+    #         else:
+    #             logging.error(f"[-] Failed to extract opcode stderr for {php_file}.")
+    # finally:
+    #     # 确保程序结束时停止 Docker 容器
+    #     stop_docker_container(container_id)
