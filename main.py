@@ -28,7 +28,7 @@ def show_model_info(path: str):
     print(f"FLOPs: {flops.total() / 1e9:.2f} GFLOPs")
 
 
-def run_web(path: str):
+def run_web(path: str, port:  int = 7860):
     # 加载模型
     tokenizer = AutoTokenizer.from_pretrained(path)
     model = AutoModelForSequenceClassification.from_pretrained(path)
@@ -61,7 +61,7 @@ def run_web(path: str):
     )
 
     # 合并两个界面
-    gr.TabbedInterface([iface, file_iface], ["文本检测", "文件检测"]).launch()
+    gr.TabbedInterface([iface, file_iface], ["文本检测", "文件检测"]).launch(server_port=port)
 
 if __name__ == "__main__":
     print(f"cuda.is_available(): {torch.cuda.is_available()}")
