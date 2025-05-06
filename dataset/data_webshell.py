@@ -1,5 +1,3 @@
-import crawl
-
 data_type = "webshell"
 
 # 仓库列表：[(用户名, 仓库名, 描述)]
@@ -26,5 +24,3 @@ REPOS = [
     ("twepl", "wso", "wso for php8"),
     ("flozz", "p0wny-shell", "p0wny-shell"),
 ]
-
-crawl.git_clone(REPOS, data_type)

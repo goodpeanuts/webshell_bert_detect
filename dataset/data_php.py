@@ -1,5 +1,3 @@
-import crawl
-
 data_type = "php"
 
 # 仓库列表：[(用户名, 仓库名, 描述)]
@@ -28,5 +26,3 @@ REPOS = [
     ("smarty-php", "smarty", "Template engine for PHP"),
     ("phpmyadmin", "phpmyadmin", "A web interface for MySQL and MariaDB"),
 ]
-
-crawl.git_clone(REPOS, data_type)

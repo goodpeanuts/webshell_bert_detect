@@ -3,6 +3,9 @@ import subprocess
 import shutil
 from datetime import datetime
 import logging
+import data_php
+import data_webshell
+import data_other
 
 
 current_time = datetime.now().strftime("%Y%m%d_%H%M%S")
@@ -64,3 +67,8 @@ def git_clone(REPOS: list[tuple[str, str, str]], data_type: str):
         logging.error(f"{error.__len__()} repos failed to clone")
         for user, repo, description in error:
             logging.error(f"[failed] {user}-{repo}, [decription]: {description}")
+
+if __name__ == "__main__":
+    git_clone(data_php.REPOS, data_php.data_type)
+    git_clone(data_webshell.REPOS, data_webshell.data_type)
+    git_clone(data_other.REPOS, data_other.data_type)
