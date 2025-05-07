@@ -11,7 +11,7 @@ wheels/
 
 # train result
 **/results/
-**/php_codebert_model/
+**/codebert_model/
 
 php.zip
 **/test/
