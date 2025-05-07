@@ -13,6 +13,8 @@ wheels/
 **/results/
 **/codebert_model/
 
+**/repo/
+
 php.zip
 **/test/
 
