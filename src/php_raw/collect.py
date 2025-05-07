@@ -42,7 +42,7 @@ def collect_files() -> tuple[list, list, int, int]:
     if not_exist_dirs:
         logging.error(f"Some directories do not exist, exit")
         exit(1)
-
+    logging.info(f"Collecting files from {white_dirs} and {black_dirs}")
     # 收集文件路径并去重
     def collect_and_deduplicate(dirs):
         file_hashes = defaultdict(list)

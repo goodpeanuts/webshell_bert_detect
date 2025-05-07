@@ -1,0 +1,68 @@
+INFO: [SKIP] laravel-laravel already exists
+INFO: [SKIP] symfony-symfony already exists
+INFO: [SKIP] composer-composer already exists
+INFO: [SKIP] bcit-ci-CodeIgniter already exists
+INFO: [SKIP] cakephp-cakephp already exists
+INFO: [SKIP] slimphp-Slim already exists
+INFO: [SKIP] yiisoft-yii2 already exists
+INFO: [SKIP] phpmyadmin-phpmyadmin already exists
+INFO: [SKIP] monicahq-monica already exists
+INFO: [SKIP] matomo-org-matomo already exists
+INFO: [SKIP] nextcloud-server already exists
+INFO: [SKIP] owncloud-core already exists
+INFO: [SKIP] fzaninotto-Faker already exists
+INFO: [SKIP] guzzle-guzzle already exists
+INFO: [SKIP] PHPMailer-PHPMailer already exists
+INFO: [SKIP] sebastianbergmann-phpunit already exists
+INFO: [SKIP] beyondcode-laravel-websockets already exists
+INFO: [SKIP] barryvdh-laravel-dompdf already exists
+INFO: [SKIP] spatie-laravel-permission already exists
+INFO: [SKIP] doctrine-orm already exists
+INFO: [SKIP] WordPress-WordPress already exists
+INFO: [SKIP] smarty-php-smarty already exists
+INFO: [SKIP] phpmyadmin-phpmyadmin already exists
+INFO: successfully cloned 0 repos, skipped 23 repos
+INFO: [SKIP] tennc-webshell already exists
+INFO: [SKIP] xl7dev-WebShell already exists
+INFO: [SKIP] JohnTroony-php-webshells already exists
+INFO: [SKIP] BlackArch-webshells already exists
+INFO: [SKIP] LandGrey-webshell-detect-bypass already exists
+INFO: [SKIP] JoyChou93-webshell already exists
+INFO: [SKIP] bartblaze-PHP-backdoors already exists
+INFO: [SKIP] WangYihang-Webshell-Sniper already exists
+INFO: [SKIP] threedr3am-JSP-Webshells already exists
+INFO: [SKIP] DeEpinGh0st-PHP-bypass-collection already exists
+INFO: [SKIP] lcatro-PHP-WebShell-Bypass-WAF already exists
+INFO: [SKIP] tanjiti-webshellSample already exists
+INFO: [SKIP] webshellpub-awsome-webshell already exists
+INFO: [SKIP] tdifg-WebShell already exists
+INFO: [SKIP] malwares-WebShell already exists
+INFO: [SKIP] lhlsec-webshell already exists
+INFO: [SKIP] oneoneplus-webshell already exists
+INFO: [SKIP] vnhacker1337-Webshell already exists
+INFO: [Clone] https://github.com/backlion/webshell.git -> ./repo/webshell/backlion-webshell, decription: 
+ERROR: failed to clone https://github.com/backlion/webshell.git: (Command '['git', 'clone', 'https://github.com/backlion/webshell.git', './repo/webshell/backlion-webshell']' returned non-zero exit status 128.)
+INFO: [Clone] https://github.com/twepl/wso.git -> ./repo/webshell/twepl-wso, decription: wso for php8
+ERROR: failed to clone https://github.com/twepl/wso.git: (Command '['git', 'clone', 'https://github.com/twepl/wso.git', './repo/webshell/twepl-wso']' returned non-zero exit status 128.)
+INFO: [SKIP] flozz-p0wny-shell already exists
+INFO: successfully cloned 0 repos, skipped 19 repos
+ERROR: 2 repos failed to clone
+ERROR: [failed] backlion-webshell, [decription]: 
+ERROR: [failed] twepl-wso, [decription]: wso for php8
+INFO: [Clone] https://github.com/puterjam/pjblog.git -> ./repo/other/puterjam-pjblog, decription: [asp] Automatically exported from code.google.com/p/pjblog
+INFO: [HASH]: CompletedProcess(args=['git', 'rev-parse', 'HEAD'], returncode=0, stdout='4e89b5895384841d3193bbf8485997b3f11371fa\n', stderr=''), remove puterjam-pjblog  .git/ 
+INFO: [Clone] https://github.com/h5bp/html5-boilerplate.git -> ./repo/other/h5bp-html5-boilerplate, decription: [html] A professional front-end template for building fast, robust, and adaptable web apps or sites.
+INFO: [HASH]: CompletedProcess(args=['git', 'rev-parse', 'HEAD'], returncode=0, stdout='d833efb44e437c745a1773e0b2e9ac877b7b3cd4\n', stderr=''), remove h5bp-html5-boilerplate  .git/ 
+INFO: [Clone] https://github.com/trizen/perl-scripts.git -> ./repo/other/trizen-perl-scripts, decription: [perl] A nice collection of day-to-day Perl scripts.
+INFO: [HASH]: CompletedProcess(args=['git', 'rev-parse', 'HEAD'], returncode=0, stdout='8a717bb0aec2ff656eec5ef7104c119942fd4743\n', stderr=''), remove trizen-perl-scripts  .git/ 
+INFO: [Clone] https://github.com/tornadoweb/tornado.git -> ./repo/other/tornadoweb-tornado, decription: [py] Tornado is a Python web framework and asynchronous networking library, originally developed at FriendFeed.
+INFO: [HASH]: CompletedProcess(args=['git', 'rev-parse', 'HEAD'], returncode=0, stdout='d8e0d36ebad1a042866a9355959e99e0bf90a3c0\n', stderr=''), remove tornadoweb-tornado  .git/ 
+INFO: [Clone] https://github.com/manhduydl/Shopping-web-Jsp-Servlet.git -> ./repo/other/manhduydl-Shopping-web-Jsp-Servlet, decription: [jsp] Course project use Jsp and Servlet, MySQL database to create Shopping website.
+INFO: [HASH]: CompletedProcess(args=['git', 'rev-parse', 'HEAD'], returncode=0, stdout='3db2f59e6ba1b27800babec455f7fad448740e4d\n', stderr=''), remove manhduydl-Shopping-web-Jsp-Servlet  .git/ 
+INFO: successfully cloned 5 repos, skipped 0 repos
+INFO: successfully cloned repos:
+INFO: puterjam-pjblog [hash]: 4e89b5895384841d3193bbf8485997b3f11371fa, [decription]: [asp] Automatically exported from code.google.com/p/pjblog 
+INFO: h5bp-html5-boilerplate [hash]: d833efb44e437c745a1773e0b2e9ac877b7b3cd4, [decription]: [html] A professional front-end template for building fast, robust, and adaptable web apps or sites. 
+INFO: trizen-perl-scripts [hash]: 8a717bb0aec2ff656eec5ef7104c119942fd4743, [decription]: [perl] A nice collection of day-to-day Perl scripts. 
+INFO: tornadoweb-tornado [hash]: d8e0d36ebad1a042866a9355959e99e0bf90a3c0, [decription]: [py] Tornado is a Python web framework and asynchronous networking library, originally developed at FriendFeed. 
+INFO: manhduydl-Shopping-web-Jsp-Servlet [hash]: 3db2f59e6ba1b27800babec455f7fad448740e4d, [decription]: [jsp] Course project use Jsp and Servlet, MySQL database to create Shopping website. 

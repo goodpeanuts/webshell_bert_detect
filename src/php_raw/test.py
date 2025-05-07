@@ -77,7 +77,7 @@ def test_php_file(filepath):
 def test():
     logging.info(f"test file extension include: {collect.ext}")
 
-    white_files, black_files = collect.collect_files()
+    white_files, black_files, _, _ = collect.collect_files()
 
     black_cnt = 0
     black_correct = 0
