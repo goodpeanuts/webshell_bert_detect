@@ -6,7 +6,7 @@ from transformers import AutoTokenizer, AutoModelForSequenceClassification
 from transformers import AutoModel, AutoTokenizer
 from fvcore.nn import FlopCountAnalysis
 
-php_raw_path = 'src/php_raw/php_codebert_model'
+php_raw_path = 'src/php_raw/codebert_model'
 
 
 
@@ -61,7 +61,7 @@ def run_web(path: str, port:  int = 7860):
     )
 
     # 合并两个界面
-    gr.TabbedInterface([iface, file_iface], ["文本检测", "文件检测"]).launch(server_port=port)
+    gr.TabbedInterface([iface, file_iface], ["文本检测", "文件检测"]).launch( server_name="0.0.0.0", server_port=port)
 
 if __name__ == "__main__":
     print(f"cuda.is_available(): {torch.cuda.is_available()}")
