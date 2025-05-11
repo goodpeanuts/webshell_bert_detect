@@ -28,7 +28,7 @@ df = df.sample(frac=1).reset_index(drop=True)  # shuffle
 # 删除空代码
 df = df.dropna(subset=["code"])
 df["code"] = df["code"].astype(str)
-df["label"] = df["label"].astype("int64")  # 👈 强制转换为整数
+df["label"] = df["label"].astype("int64")
 
 # 划分数据集
 train_df, test_df = train_test_split(df, test_size=0.2, stratify=df['label'], random_state=42)
