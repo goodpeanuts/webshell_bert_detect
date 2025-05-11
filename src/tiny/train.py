@@ -150,6 +150,6 @@ trainer.train()
 
 logging.info("💾 Saving student model...")
 trainer.save_model("tinybert_student_model")
-student_tokenizer.save_pretrained("tinybert_student_model")
+student_tokenizer.save_pretrained("codebert_model")
 
 logging.info("✅ Done! You can now run: tensorboard --logdir=./logs")
