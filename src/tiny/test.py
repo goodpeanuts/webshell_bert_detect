@@ -99,7 +99,7 @@ def test():
             err.append(file_path)
             logging.error(f"File not found: {file_path}")
             continue
-        elif label == 0:
+        elif label == 1:
             white_correct += 1
         else:
             err.append(file_path)
@@ -116,7 +116,7 @@ def test():
             err.append(file_path)
             logging.error(f"File not found: {file_path}")
             continue
-        elif label == 1:
+        elif label == 0:
             black_correct += 1
         else:
             err.append(file_path)
