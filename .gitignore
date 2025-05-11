@@ -12,6 +12,7 @@ wheels/
 # train result
 **/results/
 **/codebert_model/
+**/tinybert_model/
 
 **/repo/
 

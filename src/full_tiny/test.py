@@ -12,7 +12,7 @@ log_dir = "./logs"
 os.makedirs(log_dir, exist_ok=True)
 logging.basicConfig(level=logging.INFO, format="%(levelname)s: %(message)s", filename=f"./logs/test-{current_time}.log", filemode="w")
 
-model_path = "codebert_model"
+model_path = "tinybert_model"
 tokenizer = RobertaTokenizer.from_pretrained(model_path)
 model = AutoModelForSequenceClassification.from_pretrained(model_path)
 
@@ -90,7 +90,7 @@ def test():
 
     start_time = datetime.now().strftime("%Y%m%d_%H%M%S")
     logging.info(f"Test started at {start_time}")
-
+    
     # 处理白名单文件
     logging.info(f"Testing normal files (0):")
     for file_path in tqdm(white_files, desc="Normal files"):
@@ -124,7 +124,7 @@ def test():
         else:
             err.append(file_path)
             logging.error(f"expect Malicious: {file_path} (Predicted: {label}, Confidence: {confidence:.4f})")
-
+    
     end_time = datetime.now().strftime("%Y%m%d_%H%M%S")
     logging.info(f"Test ended at {end_time}")
     logging.info(f"Test duration: {datetime.now() - datetime.strptime(start_time, '%Y%m%d_%H%M%S')}")

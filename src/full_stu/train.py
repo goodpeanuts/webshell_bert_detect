@@ -110,7 +110,7 @@ class DistillationTrainer(Trainer):
 # ---------------------
 
 training_args = TrainingArguments(
-    output_dir="./tinybert_results",
+    output_dir="./results",
     logging_dir="./logs",
     logging_steps=50,
     eval_strategy="epoch",
@@ -149,7 +149,7 @@ trainer.train()
 # ---------------------
 
 logging.info("💾 Saving student model...")
-trainer.save_model("tinybert_student_model")
-student_tokenizer.save_pretrained("codebert_model")
+trainer.save_model("tinybert_model")
+student_tokenizer.save_pretrained("tinybert_model")
 
 logging.info("✅ Done! You can now run: tensorboard --logdir=./logs")

@@ -120,7 +120,7 @@ logging.info(metrics)
 # ---------------------
 
 logging.info("💾 Saving model...")
-trainer.save_model("php_codebert_model")
-tokenizer.save_pretrained("php_codebert_model")
+trainer.save_model("codebert_model")
+tokenizer.save_pretrained("codebert_model")
 
 logging.info("✅ Done! You can now run: tensorboard --logdir=./logs")

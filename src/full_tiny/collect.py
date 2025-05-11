@@ -6,9 +6,9 @@ from collections import defaultdict
 
 # 数据集路径
 white_dirs = ['../../dataset/repo/php']
-black_dirs = ['../../dataset/repo/webshell', '../../dataset/manual']
+black_dirs = ['../../dataset/repo/webshell', '../../dataset/manual', '../../dataset/repo/other']
 # 测试范围
-ext = ['php']
+ext = ['php','asp', 'html', 'jsp','pl', 'aspx', 'py', 'cgi', 'sh', 'js', 'java']
 
 def hash_file(filepath, chunk_size=8192):
     """
@@ -42,7 +42,7 @@ def collect_files() -> tuple[list, list, int, int]:
     if not_exist_dirs:
         logging.error(f"Some directories do not exist, exit")
         exit(1)
-    logging.info(f"Collecting files from {white_dirs} and {black_dirs}")
+
     # 收集文件路径并去重
     def collect_and_deduplicate(dirs):
         file_hashes = defaultdict(list)
