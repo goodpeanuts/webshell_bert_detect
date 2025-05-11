@@ -28,6 +28,7 @@ df = df.sample(frac=1).reset_index(drop=True)  # shuffle
 # 删除空代码
 df = df.dropna(subset=["code"])
 df["code"] = df["code"].astype(str)
+df["label"] = df["label"].astype("int64")  # 👈 强制转换为整数
 
 # 划分数据集
 train_df, test_df = train_test_split(df, test_size=0.2, stratify=df['label'], random_state=42)
@@ -59,6 +60,7 @@ val_ds_teacher.set_format(type="torch", columns=["input_ids", "attention_mask", 
 
 train_ds_student.set_format(type="torch", columns=["input_ids", "attention_mask", "label"])
 val_ds_student.set_format(type="torch", columns=["input_ids", "attention_mask", "label"])
+
 
 # ---------------------
 # 加载模型
@@ -97,7 +99,7 @@ class DistillationTrainer(Trainer):
 
         # 监督 loss
         ce_loss_fct = torch.nn.CrossEntropyLoss()
-        ce_loss = ce_loss_fct(student_logits.view(-1, 2), inputs["label"].view(-1))
+        ce_loss = ce_loss_fct(student_logits.view(-1, 2), inputs["labels"].view(-1))
 
         # 总 loss
         loss = kd_loss + ce_loss
