@@ -2,7 +2,7 @@ import os
 import logging
 import torch
 from datetime import datetime
-from transformers import RobertaTokenizer, AutoModelForSequenceClassification
+from transformers import BertTokenizer, AutoModelForSequenceClassification
 from tqdm import tqdm
 from sklearn.metrics import confusion_matrix
 import collect
@@ -13,7 +13,7 @@ os.makedirs(log_dir, exist_ok=True)
 logging.basicConfig(level=logging.INFO, format="%(levelname)s: %(message)s", filename=f"./logs/test-{current_time}.log", filemode="w")
 
 model_path = "tinybert_model"
-tokenizer = RobertaTokenizer.from_pretrained(model_path)
+tokenizer = BertTokenizer.from_pretrained(model_path)
 model = AutoModelForSequenceClassification.from_pretrained(model_path)
 
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
