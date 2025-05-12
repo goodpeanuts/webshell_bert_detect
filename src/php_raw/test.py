@@ -128,6 +128,17 @@ def test():
     end_time = datetime.now().strftime("%Y%m%d_%H%M%S")
     logging.info(f"Test ended at {end_time}")
     logging.info(f"Test duration: {datetime.now() - datetime.strptime(start_time, '%Y%m%d_%H%M%S')}")
+
+    total_params = sum(p.numel() for p in model.parameters())
+    logging.info(f"总参数量: {total_params / 1e6:.2f}M")
+
+    batch_size = 1
+    seq_length = 512
+    dummy_input_ids = torch.ones(batch_size, seq_length, dtype=torch.long).to(device)
+
+    from fvcore.nn import FlopCountAnalysis
+    flops = FlopCountAnalysis(model, (dummy_input_ids,))
+    logging.info(f"FLOPs: {flops.total() / 1e9:.2f} GFLOPs")
     
     correct = black_correct + white_correct
     total = black_cnt + white_cnt
