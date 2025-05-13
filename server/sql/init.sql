@@ -1,0 +1,7 @@
+CREATE TABLE IF NOT EXISTS users (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    username VARCHAR(64) UNIQUE NOT NULL,
+    password VARCHAR(128) NOT NULL
+);
+
+INSERT IGNORE INTO users (username, password) VALUES ('admin', '123456');

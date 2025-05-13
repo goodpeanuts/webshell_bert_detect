@@ -14,25 +14,24 @@ wheels/
 **/codebert_model/
 **/tinybert_model/
 
-**/repo/
-
-php.zip
-**/test/
-
+.vscode/
 **.csv
 
+# 爬取的源码仓库
+**/repos/
 # 排除 dataset 目录下的所有内容
 dataset/*
-
 # 不排除 .py 文件
 !dataset/**/*.py
-
+# 不排除 .sh 文件
+!dataset/*.sh
 !dataset/docker/
 # 不排除 logs 文件/目录
 !dataset/**/logs
 # 不排除 manual 文件/目录
 !dataset/manual/
 
+# server相关文件
+server/mysql_data
+shells/
 
-
-.vscode/

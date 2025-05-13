@@ -6,12 +6,17 @@ readme = "README.md"
 requires-python = ">=3.10"
 dependencies = [
     "accelerate>=1.6.0",
+    "cryptography>=44.0.3",
     "datasets>=3.5.0",
+    "flask>=3.1.0",
+    "flask-login>=0.6.3",
     "fvcore>=0.1.5.post20221221",
     "gradio>=5.27.1",
     "pandas>=2.2.3",
+    "pymysql>=1.1.1",
     "scikit-learn>=1.6.1",
     "tensorboardx>=2.6.2.2",
     "torch>=2.6.0",
     "transformers[torch]>=4.51.3",
+    "werkzeug>=3.1.3",
 ]

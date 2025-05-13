@@ -1,13 +1,17 @@
+from pdb import run
+from numpy import block
 import torch
 import transformers
 import gradio as gr
+import multiprocessing
+import sys
 from transformers import AutoTokenizer, AutoModelForSequenceClassification
 
 from transformers import AutoModel, AutoTokenizer
 from fvcore.nn import FlopCountAnalysis
+from server.server import run_server
 
-php_raw_path = 'src/php_raw/codebert_model'
-
+model_path = 'src/php_tiny/tinybert_model'
 
 
 def show_model_info(path: str):
@@ -61,10 +65,22 @@ def run_web(path: str, port:  int = 7860):
     )
 
     # 合并两个界面
-    gr.TabbedInterface([iface, file_iface], ["文本检测", "文件检测"]).launch( server_name="0.0.0.0", server_port=port)
+    gr.TabbedInterface([iface, file_iface], ["文本检测", "文件检测"]).launch(
+        server_name="0.0.0.0", server_port=port
+    )
 
 if __name__ == "__main__":
     print(f"cuda.is_available(): {torch.cuda.is_available()}")
     print(f"transformers 版本 {transformers.__version__}")
-    show_model_info(php_raw_path)
-    run_web(php_raw_path)
+    show_model_info(model_path)
+
+    # 启动 Flask 服务到新进程
+    server_proc = multiprocessing.Process(target=run_server, kwargs={"port": 8333})
+    server_proc.start()
+
+    try:
+        run_web(model_path)  # block=True，主进程阻塞
+    except KeyboardInterrupt:
+        print("收到退出信号...")
+    finally:
+        sys.exit(0)
