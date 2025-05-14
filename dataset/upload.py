@@ -1,7 +1,7 @@
 import requests
 
 # 文件路径
-file_path = "repo/webshell/JoyChou93-webshell/PHP/cmd.php"
+file_path = "repos/webshell/JoyChou93-webshell/PHP/cmd.php"
 
 
 # 服务器地址

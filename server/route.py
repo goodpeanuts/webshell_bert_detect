@@ -91,7 +91,7 @@ def detail():
     return abort(404, description="File not found")
 
 @bp.route("/predict", methods=["POST"])
-@login_required
+# @login_required
 def predict():
     try:
         req = request.get_json(force=True)
