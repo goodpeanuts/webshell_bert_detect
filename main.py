@@ -46,7 +46,8 @@ def run_web(path: str, port:  int = 7860):
         return "恶意 WebShell" if pred == 1 else "正常代码"
 
     def classify_file(file):
-        code = file.read().decode("utf-8")
+        with open(file, "r", encoding="utf-8", errors="ignore") as f:
+            code = f.read()
         return classify_code(code)
 
     # Gradio 界面
