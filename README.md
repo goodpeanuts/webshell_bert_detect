@@ -1,20 +1,202 @@
 # WebShell Detection Model
 
-This repository contains a machine learning pipeline for detecting malicious WebShell code using a fine-tuned CodeBERT model. The project includes data collection, preprocessing, model training, evaluation, and deployment.
+This repository contains a machine learning pipeline for detecting malicious WebShell code using fine-tuned models based on BERT architecture (CodeBERT and TinyBERT). The project includes data collection, preprocessing, model training, evaluation, and deployment with both web interface and API server capabilities.
 
 ---
 
-## Features
+## Project Overview
 
-- **Data Collection**: Automatically clones repositories containing benign and malicious PHP code.
+WebShells are malicious scripts that enable remote access and control of web servers. This project leverages deep learning models to automatically detect such malicious code across multiple programming languages, with a focus on PHP files. The detection system can be deployed as both an interactive web interface and a server accepting API requests.
+
+### Supported Languages
+
+The model supports detection across multiple web languages:
+- PHP
+- ASP/ASPX
+- JSP/JSPX
+- Python
+- Perl
+- HTML
+- JavaScript
+- Shell scripts
+- CGI
+- Java
+
+---
+
+### Features
+
+- **Data Collection**: Automatically clones repositories containing benign and malicious code samples.
 - **Data Preprocessing**: Filters and cleans files based on extensions and prepares labeled datasets.
-- **Model Training**: Fine-tunes the CodeBERT model for binary classification (malicious vs. benign).
+- **Model Options**:
+  - **CodeBERT**: Higher accuracy with larger model size
+  - **TinyBERT**: Faster inference with smaller footprint
 - **Evaluation**: Provides metrics such as accuracy, precision, recall, and F1 score.
-- **Deployment**: Includes a Gradio-based web interface for real-time WebShell detection.
+- **Deployment Options**:
+  - **Gradio Web Interface**: User-friendly UI for manual file analysis
+  - **HTTP Server**: API endpoint for programmatic integration
+  - **Shell Management**: Records and displays detected WebShells
+---
+
+
+## Installation
+
+### Prerequisites
+
+- [uv](https://docs.astral.sh/uv/getting-started/installation/)
+- CUDA (optional, for GPU acceleration)
+
+### Setup
+
+1. Clone this repository:
+   ```bash
+   git clone https://github.com/yourusername/wbs.git
+   cd wbs
+   ```
+
+2. Install dependencies:
+   ```bash
+   uv sync
+   ```
+
+3. activate the virtual environment (if using):
+   ```bash
+   source .venv/bin/activate
+   ```
+
+---
+
+## Usage
+
+### Running the Detection System
+
+The system can be started with a single command:
+
+```bash
+python main.py
+```
+
+This command will:
+1. Load the model (default: TinyBERT)
+2. Start a Gradio web interface on port 7860
+3. Launch an HTTP server on port 8333 for API requests
+
+### Using the Web Interface
+
+The web interface is available at http://localhost:7860 and offers two ways to analyze code:
+
+1. **Text Input**: Paste code directly into the text area
+2. **File Upload**: Upload files for analysis
+
+### Using the API Server
+
+The HTTP server accepts POST requests to `/predict` with JSON payloads:
+
+```bash
+curl -X POST http://localhost:8333/predict \
+  -H "Content-Type: application/json" \
+  -d '{"id": "unique-id", "path": "/path/to/file.php", "content": "<?php echo \"Hello\"; ?>"}'
+```
+
+Response format:
+```json
+{
+  "id": "unique-id",
+  "result": "正常代码"  # or "恶意 WebShell"
+}
+```
+
+### Viewing Detected WebShells (with [kspy](https://github.com/goodpeanuts/kspy))
+
+All detected malicious files are stored in the `shells` directory with metadata. 
+You can view a list of all detections by accessing:
+
+```
+http://localhost:8333/
+```
+
+This page displays IP addresses, file paths, and detection timestamps, with filtering options.
+
+---
+
+## Model Training
+
+To train a new model:
+
+### For CodeBERT
+
+```bash
+cd src/full
+python train.py
+```
+
+### For TinyBERT
+
+```bash
+cd src/full_tiny
+python train.py
+```
+
+---
+
+## Deployment
+
+For production deployment, consider:
+
+1. Using a production WSGI server like Gunicorn
+2. Setting up proper authentication for the API endpoints
+3. Configuring secure HTTPS
+
+Example production deployment:
+
+```bash
+gunicorn -w 4 -b 0.0.0.0:8333 "server.server:create_app()"
+```
 
 ---
 
 ## Project Structure
+
+```
+wbs/
+├── main.py                   # Main entry point for running the detection system
+├── pyproject.toml            # Project dependencies and metadata
+├── README.md                 # Project documentation
+│
+├── dataset/                  # Data collection and preprocessing
+│   ├── crawl.py              # Crawls repositories for training data
+│   ├── data_php.py           # PHP dataset processing
+│   ├── data_webshell.py      # WebShell dataset processing
+│   ├── filter.py             # Dataset filtering utilities
+│   ├── check_dup.py          # Duplicate detection
+│   └── upload.py             # Dataset upload utilities
+│
+├── server/                   # HTTP server implementation
+│   ├── server.py             # Flask server for API endpoints
+│   ├── route.py              # API route definitions
+│   └── templates/            # Web interface templates
+│
+├── shells/                   # Storage for detected malicious WebShells
+│   └── [uuid files]          # Detected WebShells with metadata
+│
+└── src/                      # Model training and evaluation code
+    ├── full/                 # CodeBERT model code
+    │   ├── train.py          # Training script for CodeBERT
+    │   └── codebert_model/   # Saved model files
+    │
+    ├── php_raw/              # Raw PHP model
+    │   └── test.py           # Testing script
+    │
+    ├── php_tiny/             # TinyBERT for PHP
+    │   └── tinybert_model/   # Saved TinyBERT model files
+    │
+    └── full_tiny/            # TinyBERT for all languages
+        └── train.py          # Training script for TinyBERT
+```
+
+### Webshell Sample Statistics
+
+Here are some statistics from the dataset used in this project:
 
 ```bash
 # dataset/repo/webshell/
@@ -56,3 +238,9 @@ find . -type f -name '*.*' | awk -F. '{print $NF}' | sort | uniq -c | sort -rn
       9 css
     ...
 ```
+
+---
+
+## License
+
+This project is licensed under the MIT License - see the LICENSE file for details.
