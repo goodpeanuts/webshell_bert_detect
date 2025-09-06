@@ -299,7 +299,7 @@ The upload script automatically:
 ### Uploaded Models
 
 The models are available on Hugging Face:
-- **Repository**: [null822/webshell-detect-bert](https://huggingface.co/null822/webshell-detect-bert/tree/main)
+- **Repository**: [null822/webshell-detect-bert](https://huggingface.co/null822/webshell-detect-bert)
 - **Models**:
   - `full_codebert_model`: CodeBERT model trained on multi-language dataset
   - `full_tiny_tinybert_model`: TinyBERT model trained on multi-language dataset
