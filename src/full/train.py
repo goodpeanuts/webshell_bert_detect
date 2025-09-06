@@ -21,23 +21,50 @@ logging.basicConfig(level=logging.INFO, format="%(levelname)s: %(message)s", fil
 # 数据集准备
 # ---------------------
 
+import base64
+from datasets import load_dataset
 
-logging.info("📁 Loading dataset...")
-df = collect.label_data()
-df = df.sample(frac=1).reset_index(drop=True)  # shuffle
+logging.info("📁 Loading dataset from Hugging Face...")
 
+# 替换为你的Hugging Face数据集路径
+DATASET_PATH = "null822/webshell-sample"
 
-# 删除空代码
-df = df.dropna(subset=["code"])
+try:
+    # 直接从Hugging Face加载数据集
+    dataset = load_dataset(DATASET_PATH)
+    
+    # 获取各个分割
+    train_raw = dataset["train"]
+    val_raw = dataset["validation"] if "validation" in dataset else dataset["val"]
+    test_raw = dataset["test"]
+    
+    logging.info(f"✅ Dataset loaded successfully from {DATASET_PATH}")
+    logging.info(f"✅ Train size: {len(train_raw)} | Val: {len(val_raw)} | Test: {len(test_raw)}")
 
-# 确保 code 字段是字符串
-df["code"] = df["code"].astype(str)
-
-# 分层划分（训练/验证/测试）
-train_df, test_df = train_test_split(df, test_size=0.2, stratify=df['label'], random_state=42)
-train_df, val_df = train_test_split(train_df, test_size=0.1, stratify=train_df['label'], random_state=42)
-
-logging.info(f"✅ Train size: {len(train_df)} | Val: {len(val_df)} | Test: {len(test_df)}")
+except Exception as e:
+    logging.error(f"❌ Failed to load dataset from Hugging Face: {e}")
+    logging.info("⚠️ Falling back to local dataset loading...")
+    
+    # 如果从Hugging Face加载失败，回退到本地数据集加载
+    df = collect.label_data()
+    df = df.sample(frac=1).reset_index(drop=True)  # shuffle
+    
+    # 删除空代码
+    df = df.dropna(subset=["code"])
+    
+    # 确保 code 字段是字符串
+    df["code"] = df["code"].astype(str)
+    
+    # 分层划分（训练/验证/测试）
+    train_df, test_df = train_test_split(df, test_size=0.2, stratify=df['label'], random_state=42)
+    train_df, val_df = train_test_split(train_df, test_size=0.1, stratify=train_df['label'], random_state=42)
+    
+    # 创建Dataset对象
+    train_raw = Dataset.from_pandas(train_df)
+    val_raw = Dataset.from_pandas(val_df)
+    test_raw = Dataset.from_pandas(test_df)
+    
+    logging.info(f"✅ Local dataset loaded. Train size: {len(train_raw)} | Val: {len(val_raw)} | Test: {len(test_raw)}")
 
 # ---------------------
 # 加载 tokenizer & 数据处理
@@ -46,12 +73,30 @@ logging.info(f"✅ Train size: {len(train_df)} | Val: {len(val_df)} | Test: {len
 tokenizer = RobertaTokenizer.from_pretrained("microsoft/codebert-base")
 
 def tokenize_function(example):
+    # 如果是从Hugging Face加载的数据集，先检查是否需要解码Base64
+    if "code_b64" in example and "code" not in example:
+        try:
+            example["code"] = base64.b64decode(example["code_b64"]).decode("utf-8", errors="ignore")
+        except:
+            # 如果解码失败，使用原始的code_b64字段
+            example["code"] = example["code_b64"]
+    
     return tokenizer(example["code"], padding="max_length", truncation=True, max_length=512)
 
-train_ds = Dataset.from_pandas(train_df).map(tokenize_function, batched=True)
-val_ds = Dataset.from_pandas(val_df).map(tokenize_function, batched=True)
-test_ds = Dataset.from_pandas(test_df).map(tokenize_function, batched=True)
+# 对数据集应用分词
+train_ds = train_raw.map(tokenize_function, batched=True)
+val_ds = val_raw.map(tokenize_function, batched=True)
+test_ds = test_raw.map(tokenize_function, batched=True)
 
+# 确保数据集中包含label列
+if "label" not in train_ds.column_names and "labels" in train_ds.column_names:
+    train_ds = train_ds.rename_column("labels", "label")
+if "label" not in val_ds.column_names and "labels" in val_ds.column_names:
+    val_ds = val_ds.rename_column("labels", "label")
+if "label" not in test_ds.column_names and "labels" in test_ds.column_names:
+    test_ds = test_ds.rename_column("labels", "label")
+
+# 设置数据集格式为torch张量
 train_ds.set_format(type="torch", columns=["input_ids", "attention_mask", "label"])
 val_ds.set_format(type="torch", columns=["input_ids", "attention_mask", "label"])
 test_ds.set_format(type="torch", columns=["input_ids", "attention_mask", "label"])

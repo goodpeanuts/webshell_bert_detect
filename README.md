@@ -8,6 +8,36 @@ This repository contains a machine learning pipeline for detecting malicious Web
 
 WebShells are malicious scripts that enable remote access and control of web servers. This project leverages deep learning models to automatically detect such malicious code across multiple programming languages, with a focus on PHP files. The detection system can be deployed as both an interactive web interface and a server accepting API requests.
 
+### Dataset
+
+The dataset used for training and evaluation is available on Hugging Face:
+- **URL**: [null822/webshell-sample](https://huggingface.co/datasets/null822/webshell-sample)
+- **Contents**: Over 5,000 code samples (both malicious and benign)
+- **Format**: CSV files with Base64-encoded samples to ensure safe handling
+- **Usage**: See the dataset README for detailed usage instructions
+
+```python
+# Example of loading and using the dataset
+import pandas as pd
+import base64
+
+# Load dataset from Hugging Face
+from datasets import load_dataset
+dataset = load_dataset("your_username/webshell-detection-dataset")
+
+# Access the data
+train_data = dataset["train"]
+val_data = dataset["val"]
+test_data = dataset["test"]
+
+# Decode a sample when needed
+def decode_sample(encoded_text):
+    return base64.b64decode(encoded_text).decode('utf-8', errors='ignore')
+
+# Example usage
+sample_code = decode_sample(train_data[0]["code_b64"])
+```
+
 ### Supported Languages
 
 The model supports detection across multiple web languages:
@@ -162,6 +192,7 @@ wbs/
 ├── main.py                   # Main entry point for running the detection system
 ├── pyproject.toml            # Project dependencies and metadata
 ├── README.md                 # Project documentation
+├── up.py                     # Model upload script for Hugging Face
 │
 ├── dataset/                  # Data collection and preprocessing
 │   ├── crawl.py              # Crawls repositories for training data
@@ -182,6 +213,8 @@ wbs/
 └── src/                      # Model training and evaluation code
     ├── full/                 # CodeBERT model code
     │   ├── train.py          # Training script for CodeBERT
+    │   ├── collect.py        # Data collection script
+    │   ├── upload_dataset.py # Dataset upload to Hugging Face
     │   └── codebert_model/   # Saved model files
     │
     ├── php_raw/              # Raw PHP model
@@ -238,6 +271,40 @@ find . -type f -name '*.*' | awk -F. '{print $NF}' | sort | uniq -c | sort -rn
       9 css
     ...
 ```
+
+---
+
+## Hugging Face Model Upload
+
+To upload trained models to Hugging Face:
+
+```bash
+# Set your Hugging Face token as an environment variable
+export HF_TOKEN="your_hugging_face_token"
+
+# Method 1: Run the upload script directly
+python up.py
+
+# Method 2: Use the convenience shell script
+./upload-to-huggingface.sh
+```
+
+The upload script automatically:
+1. Scans the `models` directory for model folders
+2. Uploads all model folders to a single Hugging Face repository (`null822/webshell-sample`)
+3. Places each model in a separate subfolder named after the model directory
+4. Handles retries and connection issues automatically
+5. Provides detailed logs of the upload process
+
+### Uploaded Models
+
+The models are available on Hugging Face:
+- **Repository**: [null822/webshell-detect-bert](https://huggingface.co/null822/webshell-detect-bert/tree/main)
+- **Models**:
+  - `full_codebert_model`: CodeBERT model trained on multi-language dataset
+  - `full_tiny_tinybert_model`: TinyBERT model trained on multi-language dataset
+  - `php_codebert_model`: CodeBERT model trained on PHP-only dataset
+  - `php_tiny_tinybert_model`: TinyBERT model trained on PHP-only dataset
 
 ---
 

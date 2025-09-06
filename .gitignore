@@ -35,3 +35,5 @@ dataset/*
 server/mysql_data
 shells/
 
+.env
+

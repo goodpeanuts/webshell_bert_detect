@@ -1,0 +1,71 @@
+Found 4 model directories
+Starting upload to Hugging Face...
+2025-07-11 16:09:52,254 - INFO - 扫描模型文件夹: ../models
+2025-07-11 16:09:52,255 - INFO - 找到模型目录: ../models/full_codebert_model
+2025-07-11 16:09:52,255 - INFO - 找到模型目录: ../models/full_tinybert_model
+2025-07-11 16:09:52,255 - INFO - 找到模型目录: ../models/php_codebert_model
+2025-07-11 16:09:52,255 - INFO - 找到模型目录: ../models/php_tinybert_model
+2025-07-11 16:09:52,255 - INFO - 找到 4 个模型文件夹:
+2025-07-11 16:09:52,255 - INFO - 1. ../models/full_codebert_model
+2025-07-11 16:09:52,255 - INFO - 2. ../models/full_tinybert_model
+2025-07-11 16:09:52,255 - INFO - 3. ../models/php_codebert_model
+2025-07-11 16:09:52,255 - INFO - 4. ../models/php_tinybert_model
+2025-07-11 16:09:52,255 - INFO - 开始上传所有模型到仓库: null822/webshell-detect-bert
+2025-07-11 16:09:52,255 - INFO - 开始上传: ../models/full_codebert_model -> null822/webshell-detect-bert/full_codebert_model
+2025-07-11 16:09:52,255 - INFO - 检查仓库 null822/webshell-detect-bert 是否存在...
+2025-07-11 16:09:53,155 - INFO - 仓库 null822/webshell-detect-bert 已存在
+2025-07-11 16:09:53,155 - INFO - 文件: merges.txt, 大小: 0.44 MB
+2025-07-11 16:09:53,155 - INFO - 文件: model.safetensors, 大小: 475.51 MB
+2025-07-11 16:09:53,155 - INFO - 文件: special_tokens_map.json, 大小: 0.00 MB
+2025-07-11 16:09:53,155 - INFO - 文件: config.json, 大小: 0.00 MB
+2025-07-11 16:09:53,155 - INFO - 文件: training_args.bin, 大小: 0.00 MB
+2025-07-11 16:09:53,155 - INFO - 文件: vocab.json, 大小: 0.95 MB
+2025-07-11 16:09:53,155 - INFO - 文件: tokenizer_config.json, 大小: 0.00 MB
+2025-07-11 16:09:53,155 - INFO - 总共 7 个文件，总大小: 476.91 MB
+2025-07-11 16:09:53,155 - INFO - 尝试上传 (1/5)...
+2025-07-11 16:10:08,485 - INFO - ✅ 上传成功！模型现在可在 https://huggingface.co/null822/webshell-detect-bert 访问
+2025-07-11 16:10:08,485 - INFO - 模型 ../models/full_codebert_model 上传成功到 null822/webshell-detect-bert/full_codebert_model
+2025-07-11 16:10:08,485 - INFO - 开始上传: ../models/full_tinybert_model -> null822/webshell-detect-bert/full_tinybert_model
+2025-07-11 16:10:08,485 - INFO - 检查仓库 null822/webshell-detect-bert 是否存在...
+2025-07-11 16:10:08,873 - INFO - 仓库 null822/webshell-detect-bert 已存在
+2025-07-11 16:10:08,873 - INFO - 文件: model.safetensors, 大小: 54.75 MB
+2025-07-11 16:10:08,873 - INFO - 文件: vocab.txt, 大小: 0.22 MB
+2025-07-11 16:10:08,874 - INFO - 文件: special_tokens_map.json, 大小: 0.00 MB
+2025-07-11 16:10:08,874 - INFO - 文件: config.json, 大小: 0.00 MB
+2025-07-11 16:10:08,874 - INFO - 文件: training_args.bin, 大小: 0.00 MB
+2025-07-11 16:10:08,874 - INFO - 文件: tokenizer_config.json, 大小: 0.00 MB
+2025-07-11 16:10:08,874 - INFO - 总共 6 个文件，总大小: 54.98 MB
+2025-07-11 16:10:08,874 - INFO - 尝试上传 (1/5)...
+model.safetensors: 100%|██████| 57.4M/57.4M [05:11<00:00, 184kB/s]
+2025-07-11 16:15:26,768 - INFO - ✅ 上传成功！模型现在可在 https://huggingface.co/null822/webshell-detect-bert 访问
+2025-07-11 16:15:26,768 - INFO - 模型 ../models/full_tinybert_model 上传成功到 null822/webshell-detect-bert/full_tinybert_model
+2025-07-11 16:15:26,768 - INFO - 开始上传: ../models/php_codebert_model -> null822/webshell-detect-bert/php_codebert_model
+2025-07-11 16:15:26,768 - INFO - 检查仓库 null822/webshell-detect-bert 是否存在...
+2025-07-11 16:15:27,243 - INFO - 仓库 null822/webshell-detect-bert 已存在
+2025-07-11 16:15:27,245 - INFO - 文件: merges.txt, 大小: 0.44 MB
+2025-07-11 16:15:27,246 - INFO - 文件: model.safetensors, 大小: 475.51 MB
+2025-07-11 16:15:27,246 - INFO - 文件: special_tokens_map.json, 大小: 0.00 MB
+2025-07-11 16:15:27,246 - INFO - 文件: config.json, 大小: 0.00 MB
+2025-07-11 16:15:27,246 - INFO - 文件: training_args.bin, 大小: 0.00 MB
+2025-07-11 16:15:27,246 - INFO - 文件: vocab.json, 大小: 0.95 MB
+2025-07-11 16:15:27,246 - INFO - 文件: tokenizer_config.json, 大小: 0.00 MB
+2025-07-11 16:15:27,246 - INFO - 总共 7 个文件，总大小: 476.91 MB
+2025-07-11 16:15:27,246 - INFO - 尝试上传 (1/5)...
+model.safetensors: 100%|████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 499M/499M [45:54<00:00, 181kB/s]
+2025-07-11 17:01:39,011 - INFO - ✅ 上传成功！模型现在可在 https://huggingface.co/null822/webshell-detect-bert 访问
+2025-07-11 17:01:39,011 - INFO - 模型 ../models/php_codebert_model 上传成功到 null822/webshell-detect-bert/php_codebert_model
+2025-07-11 17:01:39,011 - INFO - 开始上传: ../models/php_tinybert_model -> null822/webshell-detect-bert/php_tinybert_model
+2025-07-11 17:01:39,011 - INFO - 检查仓库 null822/webshell-detect-bert 是否存在...
+2025-07-11 17:01:39,551 - INFO - 仓库 null822/webshell-detect-bert 已存在
+2025-07-11 17:01:39,555 - INFO - 文件: model.safetensors, 大小: 54.75 MB
+2025-07-11 17:01:39,555 - INFO - 文件: vocab.txt, 大小: 0.22 MB
+2025-07-11 17:01:39,555 - INFO - 文件: special_tokens_map.json, 大小: 0.00 MB
+2025-07-11 17:01:39,555 - INFO - 文件: config.json, 大小: 0.00 MB
+2025-07-11 17:01:39,556 - INFO - 文件: training_args.bin, 大小: 0.00 MB
+2025-07-11 17:01:39,556 - INFO - 文件: tokenizer_config.json, 大小: 0.00 MB
+2025-07-11 17:01:39,556 - INFO - 总共 6 个文件，总大小: 54.98 MB
+2025-07-11 17:01:39,556 - INFO - 尝试上传 (1/5)...
+2025-07-11 17:01:45,358 - INFO - ✅ 上传成功！模型现在可在 https://huggingface.co/null822/webshell-detect-bert 访问
+2025-07-11 17:01:45,358 - INFO - 模型 ../models/php_tinybert_model 上传成功到 null822/webshell-detect-bert/php_tinybert_model
+2025-07-11 17:01:45,358 - INFO - 所有 4 个模型都成功上传到仓库 null822/webshell-detect-bert
+Upload process completed. Check logs for details.
